@@ -364,24 +364,58 @@ section { padding: var(--sp-6) 0; }
 }
 .spine-illustration {
   width: 100%;
-  max-width: 230px;
+  max-width: 260px;
   height: auto;
   filter: drop-shadow(0 18px 30px rgba(0,0,0,0.35));
 }
 .spine-cord {
-  stroke: rgba(207, 224, 245, 0.45);
-  stroke-width: 2.5;
-  stroke-dasharray: 700;
-  stroke-dashoffset: 700;
-  animation: spine-draw 1.8s cubic-bezier(.16,1,.3,1) forwards 0.2s;
+  stroke: rgba(207, 224, 245, 0.3);
+  stroke-width: 1.4;
+  stroke-dasharray: 720;
+  stroke-dashoffset: 720;
+  animation: spine-draw 2.2s cubic-bezier(.16,1,.3,1) forwards 0.2s;
 }
+
+/* Vertebra parts (inside the <symbol>, styled via CSS so every <use> inherits) */
+.vert-body { fill: #eef4fc; stroke: rgba(217,138,43,0.6); stroke-width: 1; }
+.vert-arch { stroke: rgba(217,138,43,0.6); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.vert-spinous { fill: #dbe7f7; stroke: rgba(217,138,43,0.6); stroke-width: 1; }
+.vert-tp { stroke: rgba(217,138,43,0.6); stroke-width: 1.4; stroke-linecap: round; }
+
 .vert {
-  fill: #eaf1fb;
-  stroke: rgba(217,138,43,0.55);
-  stroke-width: 1;
-  transform-box: fill-box;
-  animation: vert-glow 3.2s ease-in-out infinite;
+  opacity: 0;
+  animation: vert-appear 0.5s ease-out forwards, vert-glow 3.4s ease-in-out 0.6s infinite;
 }
+.vert-thoracic .vert-body { fill: #e6eefb; }
+.vert-lumbar .vert-body { fill: #dde9fa; }
+.vert-lumbar .vert-spinous { fill: #cfdff3; }
+
+.discs .disc {
+  fill: rgba(180, 200, 225, 0.4);
+  stroke: rgba(180, 200, 225, 0.55);
+  stroke-width: 0.6;
+}
+
+.sacrum {
+  fill: #cfdff3;
+  stroke: rgba(217,138,43,0.6);
+  stroke-width: 1.1;
+  opacity: 0;
+  animation: vert-appear 0.5s ease-out 1.6s forwards;
+}
+
+.region-label line { stroke: rgba(185, 204, 230, 0.55); stroke-width: 1; }
+.region-label text {
+  fill: #b9cce6;
+  font-family: var(--font-body);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-anchor: middle;
+}
+
 .nerve-branch {
   stroke: rgba(217,138,43,0.55);
   stroke-width: 1.6;
@@ -403,7 +437,7 @@ section { padding: var(--sp-6) 0; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-art-spine .spine-illustration { animation: spine-float 6s ease-in-out infinite; }
+  .hero-art-spine .spine-illustration { animation: spine-float 6s ease-in-out infinite 2.4s; }
 }
 @keyframes spine-float {
   0%, 100% { transform: translateY(0); }
@@ -412,9 +446,13 @@ section { padding: var(--sp-6) 0; }
 @keyframes spine-draw {
   to { stroke-dashoffset: 0; }
 }
+@keyframes vert-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 @keyframes vert-glow {
-  0%, 100% { stroke: rgba(217,138,43,0.35); filter: none; }
-  50% { stroke: rgba(217,138,43,0.95); filter: drop-shadow(0 0 4px rgba(217,138,43,0.6)); }
+  0%, 100% { filter: none; }
+  50% { filter: drop-shadow(0 0 3px rgba(217,138,43,0.65)); }
 }
 @keyframes nerve-flicker {
   0%, 100% { opacity: 0.35; }

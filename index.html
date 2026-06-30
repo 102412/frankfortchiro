@@ -70,54 +70,116 @@
         </div>
       </div>
       <div class="hero-art hero-art-spine">
-        <svg class="spine-illustration" viewBox="0 0 220 520" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Animated illustration of a spine">
+        <svg class="spine-illustration" viewBox="0 0 220 545" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Animated detailed illustration of a human spine, lateral view, showing cervical, thoracic, lumbar and sacral regions">
           <defs>
             <filter id="spineGlow" x="-60%" y="-60%" width="220%" height="220%">
               <feGaussianBlur stdDeviation="4" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
+            <symbol id="vertebra" viewBox="-16 -9 34 18">
+              <path class="vert-arch" d="M-2,-5 L-10,-3 L-10,3 L-2,5" fill="none"/>
+              <path class="vert-spinous" d="M-10,-3 L-16,-1 L-16,1 L-10,3 Z"/>
+              <line class="vert-tp" x1="-4" y1="-5" x2="-7" y2="-9"/>
+              <line class="vert-tp" x1="-4" y1="5" x2="-7" y2="9"/>
+              <ellipse class="vert-body" cx="6" cy="0" rx="9" ry="7"/>
+            </symbol>
           </defs>
 
-          <path id="spinePath" class="spine-cord"
-            d="M113,38.5 Q116,57 119,75.5 Q122,94 124,112.5 Q126,131 127,149.5 Q128,168 128,186.5 Q128,205 126.5,223.5 Q125,242 122.5,260.5 Q120,279 117,297 Q114,315 111,333.5 Q108,352 105,370.5 Q102,389 99.5,407.5 Q97,426 95,444.5 Q93,463 92.5,481.5 Q92,500 92,500"
-            fill="none" stroke-linecap="round"/>
+          <path id="spinePath" class="spine-cord" fill="none" stroke-linecap="round"
+            d="M101.85,30 Q103.7,40 105.45,50 Q107.2,60 108.8,70 Q110.4,80 111.8,90 Q113.2,100 114.3,110 Q115.4,120 116.2,130 Q117.0,140 117.4,150 Q117.8,160 117.9,170 Q118.0,180 117.65,190 Q117.3,200 116.65,210 Q116.0,220 115.0,230 Q114.0,240 112.7,250 Q111.4,260 109.85,270 Q108.3,280 106.55,290 Q104.8,300 103.0,310 Q101.2,320 99.4,330 Q97.6,340 95.8,350 Q94.0,360 92.35,370 Q90.7,380 89.2,390 Q87.7,400 86.5,410 Q85.3,420 84.4,430 Q83.5,440 82.95,450 Q82.4,460 82.2,470 Q82.0,480 80,505 Q78,520 78,528"/>
 
-          <!-- nerve roots (lumbar) referencing sciatica -->
-          <path class="nerve-branch" d="M108,352 C90,365 75,385 64,415" fill="none" stroke-linecap="round"/>
-          <path class="nerve-branch" d="M99.5,407.5 C82,418 68,438 58,465" fill="none" stroke-linecap="round" style="animation-delay:.6s"/>
-
-          <g class="vertebrae">
-            <rect class="vert" x="93" y="11.5" width="34" height="17" rx="6" transform="rotate(0 110 20)" style="animation-delay:0s"/>
-            <rect class="vert" x="99" y="48.5" width="34" height="17" rx="6" transform="rotate(5 116 57)" style="animation-delay:.12s"/>
-            <rect class="vert" x="105" y="85.5" width="34" height="17" rx="6" transform="rotate(10 122 94)" style="animation-delay:.24s"/>
-            <rect class="vert" x="109" y="122.5" width="34" height="17" rx="6" transform="rotate(13 126 131)" style="animation-delay:.36s"/>
-            <rect class="vert" x="111" y="159.5" width="34" height="17" rx="6" transform="rotate(14 128 168)" style="animation-delay:.48s"/>
-            <rect class="vert" x="111" y="196.5" width="34" height="17" rx="6" transform="rotate(14 128 205)" style="animation-delay:.6s"/>
-            <rect class="vert" x="108" y="233.5" width="34" height="17" rx="6" transform="rotate(12 125 242)" style="animation-delay:.72s"/>
-            <rect class="vert" x="103" y="270.5" width="34" height="17" rx="6" transform="rotate(8 120 279)" style="animation-delay:.84s"/>
-            <rect class="vert" x="97" y="306.5" width="34" height="17" rx="6" transform="rotate(3 114 315)" style="animation-delay:.96s"/>
-            <rect class="vert" x="91" y="343.5" width="34" height="17" rx="6" transform="rotate(-2 108 352)" style="animation-delay:1.08s"/>
-            <rect class="vert" x="85" y="380.5" width="34" height="17" rx="6" transform="rotate(-6 102 389)" style="animation-delay:1.2s"/>
-            <rect class="vert" x="80" y="417.5" width="34" height="17" rx="6" transform="rotate(-10 97 426)" style="animation-delay:1.32s"/>
-            <rect class="vert" x="76" y="454.5" width="34" height="17" rx="6" transform="rotate(-14 93 463)" style="animation-delay:1.44s"/>
-            <rect class="vert" x="75" y="491.5" width="34" height="17" rx="6" transform="rotate(-14 92 500)" style="animation-delay:1.56s"/>
+          <!-- region brackets -->
+          <g class="region-label">
+            <line x1="150" y1="22" x2="150" y2="138"/><line x1="146" y1="22" x2="150" y2="22"/><line x1="146" y1="138" x2="150" y2="138"/>
+            <text x="155" y="84">CERVICAL</text>
+          </g>
+          <g class="region-label">
+            <line x1="150" y1="158" x2="150" y2="382"/><line x1="146" y1="158" x2="150" y2="158"/><line x1="146" y1="382" x2="150" y2="382"/>
+            <text x="155" y="274">THORACIC</text>
+          </g>
+          <g class="region-label">
+            <line x1="150" y1="398" x2="150" y2="482"/><line x1="146" y1="398" x2="150" y2="398"/><line x1="146" y1="482" x2="150" y2="482"/>
+            <text x="155" y="444">LUMBAR</text>
+          </g>
+          <g class="region-label">
+            <line x1="150" y1="490" x2="150" y2="528"/><line x1="146" y1="490" x2="150" y2="490"/><line x1="146" y1="528" x2="150" y2="528"/>
+            <text x="155" y="512">SACRUM</text>
           </g>
 
-          <circle class="nerve-pulse" r="5" filter="url(#spineGlow)">
-            <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
+          <!-- intervertebral discs (drawn first, sit behind vertebrae) -->
+          <g class="discs">
+            <ellipse class="disc" cx="101.85" cy="30" rx="6.5" ry="2.4" transform="rotate(10.5 101.85 30)"/>
+            <ellipse class="disc" cx="105.45" cy="50" rx="6.6" ry="2.4" transform="rotate(9.9 105.45 50)"/>
+            <ellipse class="disc" cx="108.8" cy="70" rx="6.7" ry="2.4" transform="rotate(9.1 108.8 70)"/>
+            <ellipse class="disc" cx="111.8" cy="90" rx="6.8" ry="2.5" transform="rotate(8.0 111.8 90)"/>
+            <ellipse class="disc" cx="114.3" cy="110" rx="6.9" ry="2.5" transform="rotate(6.3 114.3 110)"/>
+            <ellipse class="disc" cx="116.2" cy="130" rx="7.0" ry="2.5" transform="rotate(4.6 116.2 130)"/>
+            <ellipse class="disc" cx="117.4" cy="150" rx="8.2" ry="2.7" transform="rotate(2.3 117.4 150)"/>
+            <ellipse class="disc" cx="117.9" cy="170" rx="8.3" ry="2.7" transform="rotate(0.6 117.9 170)"/>
+            <ellipse class="disc" cx="117.65" cy="190" rx="8.4" ry="2.7" transform="rotate(-2.0 117.65 190)"/>
+            <ellipse class="disc" cx="116.65" cy="210" rx="8.5" ry="2.8" transform="rotate(-3.7 116.65 210)"/>
+            <ellipse class="disc" cx="115.0" cy="230" rx="8.6" ry="2.8" transform="rotate(-5.7 115.0 230)"/>
+            <ellipse class="disc" cx="112.7" cy="250" rx="8.7" ry="2.8" transform="rotate(-7.4 112.7 250)"/>
+            <ellipse class="disc" cx="109.85" cy="270" rx="8.8" ry="2.8" transform="rotate(-8.8 109.85 270)"/>
+            <ellipse class="disc" cx="106.55" cy="290" rx="8.8" ry="2.9" transform="rotate(-9.9 106.55 290)"/>
+            <ellipse class="disc" cx="103.0" cy="310" rx="8.9" ry="2.9" transform="rotate(-10.2 103.0 310)"/>
+            <ellipse class="disc" cx="99.4" cy="330" rx="8.9" ry="2.9" transform="rotate(-10.2 99.4 330)"/>
+            <ellipse class="disc" cx="95.8" cy="350" rx="8.8" ry="2.9" transform="rotate(-10.2 95.8 350)"/>
+            <ellipse class="disc" cx="92.35" cy="370" rx="8.8" ry="2.9" transform="rotate(-9.4 92.35 370)"/>
+            <ellipse class="disc" cx="89.2" cy="390" rx="9.8" ry="3.2" transform="rotate(-8.5 89.2 390)"/>
+            <ellipse class="disc" cx="86.5" cy="410" rx="10.0" ry="3.3" transform="rotate(-6.8 86.5 410)"/>
+            <ellipse class="disc" cx="84.4" cy="430" rx="10.2" ry="3.4" transform="rotate(-5.1 84.4 430)"/>
+            <ellipse class="disc" cx="82.95" cy="450" rx="10.4" ry="3.4" transform="rotate(-2.6 82.95 450)"/>
+            <ellipse class="disc" cx="82.2" cy="470" rx="10.5" ry="3.5" transform="rotate(-1.1 82.2 470)"/>
+          </g>
+
+          <!-- 24 vertebrae: C1-C7, T1-T12, L1-L5 -->
+          <g class="vertebrae">
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(100.0,20) rotate(10.5) scale(0.72)" style="animation-delay:0s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(103.7,40) rotate(9.9) scale(0.72)" style="animation-delay:.07s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(107.2,60) rotate(9.1) scale(0.74)" style="animation-delay:.14s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(110.4,80) rotate(8.0) scale(0.74)" style="animation-delay:.21s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(113.2,100) rotate(6.3) scale(0.76)" style="animation-delay:.28s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(115.4,120) rotate(4.6) scale(0.76)" style="animation-delay:.35s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert" transform="translate(117.0,140) rotate(2.3) scale(0.78)" style="animation-delay:.42s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(117.8,160) rotate(0.6) scale(0.92)" style="animation-delay:.49s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(118.0,180) rotate(-2.0) scale(0.94)" style="animation-delay:.56s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(117.3,200) rotate(-3.7) scale(0.95)" style="animation-delay:.63s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(116.0,220) rotate(-5.7) scale(0.96)" style="animation-delay:.70s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(114.0,240) rotate(-7.4) scale(0.97)" style="animation-delay:.77s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(111.4,260) rotate(-8.8) scale(0.98)" style="animation-delay:.84s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(108.3,280) rotate(-9.9) scale(0.99)" style="animation-delay:.91s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(104.8,300) rotate(-10.2) scale(1.00)" style="animation-delay:.98s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(101.2,320) rotate(-10.2) scale(1.00)" style="animation-delay:1.05s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(97.6,340) rotate(-10.2) scale(0.99)" style="animation-delay:1.12s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(94.0,360) rotate(-9.4) scale(0.98)" style="animation-delay:1.19s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-thoracic" transform="translate(90.7,380) rotate(-8.5) scale(0.97)" style="animation-delay:1.26s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-lumbar" transform="translate(87.7,400) rotate(-6.8) scale(1.18)" style="animation-delay:1.33s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-lumbar" transform="translate(85.3,420) rotate(-5.1) scale(1.22)" style="animation-delay:1.40s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-lumbar" transform="translate(83.5,440) rotate(-2.6) scale(1.25)" style="animation-delay:1.47s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-lumbar" transform="translate(82.4,460) rotate(-1.1) scale(1.28)" style="animation-delay:1.54s"/>
+            <use href="#vertebra" xlink:href="#vertebra" class="vert vert-lumbar" transform="translate(82.2,470) rotate(-1.1) scale(1.30)" style="animation-delay:1.61s"/>
+          </g>
+
+          <!-- fused sacrum + coccyx -->
+          <path class="sacrum" d="M72,478 Q92,472 95,490 Q94,512 84,535 Q76,540 70,528 Q66,505 72,478 Z"/>
+
+          <!-- lumbar nerve roots (sciatica) -->
+          <path class="nerve-branch" d="M84.4,430 C66,444 50,465 40,495" fill="none" stroke-linecap="round"/>
+          <path class="nerve-branch" d="M82.4,460 C62,472 46,492 36,520" fill="none" stroke-linecap="round" style="animation-delay:.6s"/>
+
+          <circle class="nerve-pulse" r="4.5" filter="url(#spineGlow)">
+            <animateMotion dur="3.6s" repeatCount="indefinite" rotate="auto">
               <mpath href="#spinePath" xlink:href="#spinePath"/>
             </animateMotion>
           </circle>
-          <circle class="nerve-pulse nerve-pulse-trail" r="3.5" filter="url(#spineGlow)">
-            <animateMotion dur="3.2s" repeatCount="indefinite" begin="-0.5s" rotate="auto">
+          <circle class="nerve-pulse nerve-pulse-trail" r="3.2" filter="url(#spineGlow)">
+            <animateMotion dur="3.6s" repeatCount="indefinite" begin="-0.55s" rotate="auto">
               <mpath href="#spinePath" xlink:href="#spinePath"/>
             </animateMotion>
           </circle>
         </svg>
-        <p class="spine-caption">Every plan starts with understanding what your spine is telling us.</p>
+        <p class="spine-caption">A detailed look at the spine we treat &mdash; cervical to sacrum.</p>
       </div>
     </div>
   </section>
