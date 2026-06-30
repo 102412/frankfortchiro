@@ -343,6 +343,84 @@ section { padding: var(--sp-6) 0; }
 }
 .hero-art img { border-radius: var(--radius-md); width: 100%; height: auto; }
 
+/* ---- Animated spine illustration (hero) ---- */
+.hero-art-spine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4) var(--sp-3) var(--sp-3);
+  overflow: hidden;
+}
+.hero-art-spine::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 320px; height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(217,138,43,0.18), transparent 70%);
+  pointer-events: none;
+}
+.spine-illustration {
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.35));
+}
+.spine-cord {
+  stroke: rgba(207, 224, 245, 0.45);
+  stroke-width: 2.5;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: spine-draw 1.8s cubic-bezier(.16,1,.3,1) forwards 0.2s;
+}
+.vert {
+  fill: #eaf1fb;
+  stroke: rgba(217,138,43,0.55);
+  stroke-width: 1;
+  transform-box: fill-box;
+  animation: vert-glow 3.2s ease-in-out infinite;
+}
+.nerve-branch {
+  stroke: rgba(217,138,43,0.55);
+  stroke-width: 1.6;
+  stroke-dasharray: 3 4;
+  opacity: 0.6;
+  animation: nerve-flicker 2.6s ease-in-out infinite;
+}
+.nerve-pulse {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 6px rgba(217,138,43,0.9));
+}
+.nerve-pulse-trail { fill: rgba(217,138,43,0.45); }
+.spine-caption {
+  margin: var(--sp-2) 0 0;
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: #b9cce6;
+  max-width: 26ch;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-art-spine .spine-illustration { animation: spine-float 6s ease-in-out infinite; }
+}
+@keyframes spine-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes spine-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes vert-glow {
+  0%, 100% { stroke: rgba(217,138,43,0.35); filter: none; }
+  50% { stroke: rgba(217,138,43,0.95); filter: drop-shadow(0 0 4px rgba(217,138,43,0.6)); }
+}
+@keyframes nerve-flicker {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.85; }
+}
+
 /* Page hero (interior pages, no big gradient illustration) */
 .page-hero {
   background: linear-gradient(155deg, var(--brand-blue-darker) 0%, var(--brand-blue) 75%);

@@ -69,8 +69,55 @@
           <div class="hero-stat"><strong>4</strong><span>Doctors of Chiropractic</span></div>
         </div>
       </div>
-      <div class="hero-art">
-        <img src="assets/img/locations/west.webp" alt="Frankfort Chiropractic Center West office exterior" loading="lazy">
+      <div class="hero-art hero-art-spine">
+        <svg class="spine-illustration" viewBox="0 0 220 520" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Animated illustration of a spine">
+          <defs>
+            <filter id="spineGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <path id="spinePath" class="spine-cord"
+            d="M113,38.5 Q116,57 119,75.5 Q122,94 124,112.5 Q126,131 127,149.5 Q128,168 128,186.5 Q128,205 126.5,223.5 Q125,242 122.5,260.5 Q120,279 117,297 Q114,315 111,333.5 Q108,352 105,370.5 Q102,389 99.5,407.5 Q97,426 95,444.5 Q93,463 92.5,481.5 Q92,500 92,500"
+            fill="none" stroke-linecap="round"/>
+
+          <!-- nerve roots (lumbar) referencing sciatica -->
+          <path class="nerve-branch" d="M108,352 C90,365 75,385 64,415" fill="none" stroke-linecap="round"/>
+          <path class="nerve-branch" d="M99.5,407.5 C82,418 68,438 58,465" fill="none" stroke-linecap="round" style="animation-delay:.6s"/>
+
+          <g class="vertebrae">
+            <rect class="vert" x="93" y="11.5" width="34" height="17" rx="6" transform="rotate(0 110 20)" style="animation-delay:0s"/>
+            <rect class="vert" x="99" y="48.5" width="34" height="17" rx="6" transform="rotate(5 116 57)" style="animation-delay:.12s"/>
+            <rect class="vert" x="105" y="85.5" width="34" height="17" rx="6" transform="rotate(10 122 94)" style="animation-delay:.24s"/>
+            <rect class="vert" x="109" y="122.5" width="34" height="17" rx="6" transform="rotate(13 126 131)" style="animation-delay:.36s"/>
+            <rect class="vert" x="111" y="159.5" width="34" height="17" rx="6" transform="rotate(14 128 168)" style="animation-delay:.48s"/>
+            <rect class="vert" x="111" y="196.5" width="34" height="17" rx="6" transform="rotate(14 128 205)" style="animation-delay:.6s"/>
+            <rect class="vert" x="108" y="233.5" width="34" height="17" rx="6" transform="rotate(12 125 242)" style="animation-delay:.72s"/>
+            <rect class="vert" x="103" y="270.5" width="34" height="17" rx="6" transform="rotate(8 120 279)" style="animation-delay:.84s"/>
+            <rect class="vert" x="97" y="306.5" width="34" height="17" rx="6" transform="rotate(3 114 315)" style="animation-delay:.96s"/>
+            <rect class="vert" x="91" y="343.5" width="34" height="17" rx="6" transform="rotate(-2 108 352)" style="animation-delay:1.08s"/>
+            <rect class="vert" x="85" y="380.5" width="34" height="17" rx="6" transform="rotate(-6 102 389)" style="animation-delay:1.2s"/>
+            <rect class="vert" x="80" y="417.5" width="34" height="17" rx="6" transform="rotate(-10 97 426)" style="animation-delay:1.32s"/>
+            <rect class="vert" x="76" y="454.5" width="34" height="17" rx="6" transform="rotate(-14 93 463)" style="animation-delay:1.44s"/>
+            <rect class="vert" x="75" y="491.5" width="34" height="17" rx="6" transform="rotate(-14 92 500)" style="animation-delay:1.56s"/>
+          </g>
+
+          <circle class="nerve-pulse" r="5" filter="url(#spineGlow)">
+            <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#spinePath" xlink:href="#spinePath"/>
+            </animateMotion>
+          </circle>
+          <circle class="nerve-pulse nerve-pulse-trail" r="3.5" filter="url(#spineGlow)">
+            <animateMotion dur="3.2s" repeatCount="indefinite" begin="-0.5s" rotate="auto">
+              <mpath href="#spinePath" xlink:href="#spinePath"/>
+            </animateMotion>
+          </circle>
+        </svg>
+        <p class="spine-caption">Every plan starts with understanding what your spine is telling us.</p>
       </div>
     </div>
   </section>
