@@ -19,34 +19,46 @@
         <span>West &amp; East &middot; Frankfort, KY</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="doctors.html">Our Doctors</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="new-patients.html">New Patients</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="header-cta">
-        <a class="header-phone" href="tel:+15028753200">📞 (502) 875-3200</a>
-        <a class="btn btn-primary" href="new-patients.html">Request Appointment</a>
-      </div>
-    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+15028753200"><span class="header-phone-dot"></span><span class="phone-text">(502) 875-3200</span></a>
+      <a class="btn btn-primary btn-sm" href="new-patients.html">Request Appointment</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<nav class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-backdrop" data-nav-close></div>
+  <div class="nav-drawer-panel">
+    <button class="nav-drawer-close" aria-label="Close menu" data-nav-close>&times;</button>
+    <ul class="nav-drawer-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="doctors.html">Our Doctors</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="new-patients.html">New Patients</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-drawer-footer">
+      <a class="btn btn-primary btn-block" href="new-patients.html">Request an Appointment</a>
+      <a class="header-phone" href="tel:+15028753200">📞 (502) 875-3200</a>
+    </div>
+  </div>
+</nav>
 
 <main id="main">
 
   <!-- Hero -->
   <section class="hero">
+    <span class="blob-1" aria-hidden="true"></span>
+    <span class="blob-2" aria-hidden="true"></span>
     <div class="container hero-grid">
       <div>
-        <h1>Where Pain Is Treated With Personal Care</h1>
-        <p class="lede">Two Frankfort locations, four experienced doctors, and a treatment plan built around you &mdash; not a one-size-fits-all adjustment. Real relief for back pain, headaches, sciatica, and more.</p>
+        <span class="eyebrow" style="color:#ffd9a8;">Frankfort, KY &middot; Two Locations</span>
+        <h1>Real Relief, Built Around Your Body</h1>
+        <p class="lede">Where pain is treated with personal care &mdash; not a six-minute crack-and-go. Two Frankfort offices, four doctors, and a plan that's actually built for you.</p>
         <div class="hero-cta-row">
           <a class="btn btn-primary" href="new-patients.html">Request an Appointment</a>
           <a class="btn btn-outline-light" href="tel:+15028753200">Call Frankfort West</a>

@@ -19,25 +19,34 @@
         <span>West &amp; East &middot; Frankfort, KY</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="doctors.html" class="active">Our Doctors</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="new-patients.html">New Patients</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="header-cta">
-        <a class="header-phone" href="tel:+15028753200">📞 (502) 875-3200</a>
-        <a class="btn btn-primary" href="new-patients.html">Request Appointment</a>
-      </div>
-    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+15028753200"><span class="header-phone-dot"></span><span class="phone-text">(502) 875-3200</span></a>
+      <a class="btn btn-primary btn-sm" href="new-patients.html">Request Appointment</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<nav class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-backdrop" data-nav-close></div>
+  <div class="nav-drawer-panel">
+    <button class="nav-drawer-close" aria-label="Close menu" data-nav-close>&times;</button>
+    <ul class="nav-drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doctors.html" class="active">Our Doctors</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="new-patients.html">New Patients</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-drawer-footer">
+      <a class="btn btn-primary btn-block" href="new-patients.html">Request an Appointment</a>
+      <a class="header-phone" href="tel:+15028753200">📞 (502) 875-3200</a>
+    </div>
+  </div>
+</nav>
 
 <main id="main">
   <section class="page-hero">
