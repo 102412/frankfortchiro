@@ -843,9 +843,11 @@ fieldset legend { font-weight: 700; font-size: var(--fs-sm); margin-bottom: 0.4r
     --fs-2xl: 1.8rem;
     --fs-xl: 1.5rem;
   }
-  /* Header: logo + hamburger only — CTA and phone are in the drawer */
+  /* Header: logo + hamburger only — CTA and phone live in the drawer */
   .header-actions .btn-sm { display: none; }
-  .header-phone { display: none; }
+  .header-inner .header-phone { display: none; }
+  .brand-text { display: none; }
+  .brand img { height: 40px; }
 
   /* Hero: hide illustration so hero is a tight text+CTA block */
   .hero-art { display: none; }
